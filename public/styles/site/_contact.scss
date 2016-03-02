@@ -1,0 +1,84 @@
+.contact-slide {
+	margin-top: 100px;
+	@include breakpoint ($medium) {
+		margin-top: 75px;
+	}
+}
+.contact {
+	@include flexbox();
+	justify-content: space-between;
+	-webkit-flex-wrap: wrap; 
+	-ms-flex-wrap: wrap; 
+	flex-wrap: wrap; 
+	.contact-links {
+		border-top: none;
+		vertical-align: top;
+		margin-top: 0;
+		padding-top: 0;
+		li{
+			display: block;
+			margin: 0 auto 50px auto; 
+		} 
+		.email {
+			display: none;
+		}
+	}
+}
+.contact-area {
+	width: 80%; 
+	vertical-align: top;
+	padding-right: 25px;
+	padding-bottom: 25px; 
+	@include breakpoint ($small) {
+		width: 100%; 
+	}
+}
+
+.side-links {
+	width: 20%; 
+	border-left: 3px solid $black; 
+	@include breakpoint ($small) {
+		width: 100%; 
+		border-left: none;
+		.contact-links {
+			li {
+				display: inline-block;
+			} 
+		}
+		
+	}
+}
+
+.contact-form {
+	.form-group {
+		position: relative;
+		label, input {
+			display: block;
+		}
+	}
+
+	.text-area {
+		display: block;
+		textarea {
+			width: 50%; 
+			@include breakpoint ($small) {
+				width: 100%; 
+			}
+		}
+	}
+	label {
+		font-family: $body;
+		margin: 25px 0 10px 0;
+		display: block 
+	}
+	button {
+		padding: 10px 25px;
+		border: none;
+		background: $black;
+		color: $white;
+		margin-top: 25px;
+		&:hover {
+			background: $gray; 
+		}    
+	}
+}

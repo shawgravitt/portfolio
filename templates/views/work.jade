@@ -1,0 +1,19 @@
+extends ../layouts/default
+include ../mixins/project_mixins
+include ../mixins/default_mixins
+
+block intro
+	+work_nav
+	.wrapper.work-page
+		h1 My Work
+
+block content
+	.work
+		each project in data.projects.results
+			+project(project)
+				
+		if data.projects.totalPages > 1
+			+pagination
+	
+	.wrapper
+		+contact_links

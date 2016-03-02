@@ -1,0 +1,30 @@
+extends ../layouts/default
+include ../mixins/default_mixins
+include ../mixins/project_mixins
+
+block intro
+	+project_nav
+
+block content
+	.single-project
+		article
+			if data.project.heroImage.exists
+				.image-wrap: img(src=data.project._.heroImage.fill(1500,810))
+			.wrapper
+				.project-logo
+					img(src=data.project._.logo.fit(300,300))
+				.project-description
+					if !data.project
+						h2 Invalid project.
+					else
+						h1= data.project.title
+						!= data.project.content
+						h5 Site launched in
+							if data.project.publishedDate
+								| #{data.project._.publishedDate.format('MMMM YYYY')} 
+						h4 Visit 
+							a(href=data.project.url, target='_blank'): =data.project.title
+
+
+	.wrapper
+		+contact_links

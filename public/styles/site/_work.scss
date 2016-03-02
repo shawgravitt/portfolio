@@ -1,0 +1,143 @@
+.work-page {
+	margin-top: 100px;
+	@include breakpoint ($medium) {
+		margin-top: 75px;
+	}
+}
+.work {
+	text-align: center;
+}
+
+.project {
+	display: block;
+	overflow: hidden;
+	position: relative; 
+	width: 100%; 
+	border-bottom: 1px solid $gray; 
+	white-space: nowrap;
+	&:nth-child(even) {
+		direction: rtl;
+	}
+	&:last-of-type {
+		border-bottom: none;
+	}
+	.peephole {
+		display: inline-block;
+		width: 50%;
+		position: relative;
+		height: 100%; 
+		overflow: hidden;
+		vertical-align: middle;
+		img {
+			position: relative; 
+			z-index: -1; 
+			transition: all 2.5s ease; 
+			width: 100%; 
+			@include breakpoint ($small) {
+				max-width: 100%; 
+			}
+		}
+		@include breakpoint ($small) {
+			width: 100%;
+			display: block; 
+		}
+	}
+	.overlay {
+		background:rgba(112, 128, 144, .75);
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+		transition: opacity 1.75s ease; 
+		@include breakpoint ($medium) {
+			opacity: 1;
+		}
+		@include breakpoint ($small) {
+			opacity: 1;
+		}
+	}
+	button {
+		border: 2px solid $white;
+		background: transparent;
+		height: 50px;
+		width: 125px;
+		padding: 0;
+		&:hover {
+			background: rgba(255,255,255,0.75);
+			transition: all 1.5s ease; 
+		}
+	}
+	a {
+		color: $white;
+		display: inline-block;
+		position: absolute;
+		top: 50%;
+		left: 50%; 
+		-webkit-transform: translate(-50%, -50%); 
+		transform: translate(-50%, -50%);
+		&:hover {
+			color: $black;
+			// transition: all 0.25s ease;
+		}
+		@include breakpoint ($small) {
+			top: 75%; 
+		}
+	}
+	figcaption {
+		display: inline-block;
+		width: 50%;
+		position: relative;
+		vertical-align: middle;
+		@include breakpoint ($small) {
+			width: 100%;
+			display: block; 
+			color: $white;
+			z-index: 1; 
+			position: absolute;
+			top: 12.5%; 
+		}
+	}
+	&:hover {
+		.peephole {
+			img {
+				-webkit-transform: scale(1.1);
+				-ms-transform:  scale(1.1);
+				transform: scale(1.1);
+			}
+		}
+		.overlay {
+			opacity: 1; 
+		}
+	}
+	@include breakpoint ($small) {
+		height: auto;
+		margin-bottom: 10px;
+	}
+}
+
+.project{
+	.peephole {
+		opacity: 0;
+		transition: all .75s;
+	}
+	figcaption {
+		opacity: 0;
+		left: -80px;
+		transition: all .75s;
+	}
+}
+
+.project.bring-in {
+	.peephole {
+		opacity: 1;
+		transition: all .75s;
+	}
+	figcaption {
+		opacity: 1;
+		left: 0px;
+		transition: all .75s;
+	}
+}
+

@@ -1,0 +1,230 @@
+// .mobile-nav {
+// 	display: none;
+// 	header {
+// 	  position: fixed;
+// 	  width: 100%;
+// 	  height: 100%;
+// 	  background: rgba(0,0,0,0.9);
+// 	  top: 0; 
+// 	  bottom: 0;
+// 	  left: 0;
+// 	  right: 0;
+// 	  display: none;
+// 	  z-index: 1; 
+// 	  nav {
+// 	    position: relative;
+// 	    top: 45%;
+// 	    left: 50%;
+// 	    transform: translate(-50%, -50%); 
+// 	  }
+// 	  ul {
+// 	    text-align: center;
+// 	    padding: 0;
+// 	  }
+// 	  li {
+// 	    margin: 30px auto;
+// 	    @include font-size(50px);
+// 	    display: block;
+// 	    text-transform: uppercase;
+// 	  }
+// 	  a {
+// 	    color: $white; 
+// 	    text-decoration: none;
+// 	  }
+// 	}
+// 	.show{
+// 	  display: block;
+// 	}
+
+// 	.nav-icon {
+// 	  width: 45px;
+// 	  height: 45px;
+// 	  position: fixed;
+// 	  top: 30px;
+// 	  right: 50px; 
+// 	  -webkit-transform: rotate(0deg);
+// 	  -moz-transform: rotate(0deg);
+// 	  -o-transform: rotate(0deg);
+// 	  transform: rotate(0deg);
+// 	  -webkit-transition: .5s ease-in-out;
+// 	  -moz-transition: .5s ease-in-out;
+// 	  -o-transition: .5s ease-in-out;
+// 	  transition: .5s ease-in-out;
+// 	  cursor: pointer;
+// 	  z-index: 2;  
+// 	  span {
+// 	    display: block;
+// 	    position: absolute;
+// 	    height: 5px;
+// 	    width: 100%;
+// 	    border-radius: 7px; 
+// 	    background: $black;
+// 	    opacity: 1;
+// 	    left: 0;
+// 	    -webkit-transform: rotate(0deg);
+// 	    transform: rotate(0deg);
+// 	    transition: .25s ease-in-out;
+
+// 	    &:nth-child(1) {
+// 	      top: 0px;
+// 	    }
+
+// 	    &:nth-child(2),&:nth-child(3) {
+// 	      top: 12px;
+// 	    }
+
+// 	    &:nth-child(4) {
+// 	      top: 24px;
+// 	    }
+// 	  }
+
+// 	  &.open {
+// 	    span:nth-child(1) {
+// 	      top: 18px;
+// 	      width: 0%;
+// 	      left: 50%;
+// 	    }
+
+// 	    span:nth-child(2) {
+// 	      -webkit-transform: rotate(45deg);
+// 	      -moz-transform: rotate(45deg);
+// 	      -o-transform: rotate(45deg);
+// 	      transform: rotate(45deg);
+// 	      background: $white;
+// 	    }
+
+// 	    span:nth-child(3) {
+// 	      -webkit-transform: rotate(-45deg);
+// 	      -moz-transform: rotate(-45deg);
+// 	      -o-transform: rotate(-45deg);
+// 	      transform: rotate(-45deg);
+// 	      background: $white;
+// 	    }
+
+// 	    span:nth-child(4) {
+// 	      top: 18px;
+// 	      width: 0%;
+// 	      left: 50%;
+// 	    }
+// 	  } 
+// 	}
+// 	.contact-links {
+// 		margin-top: 0;
+// 		span {
+// 			color: $white; 
+// 		}
+// 		li {
+// 			display: inline-block;
+// 		}
+// 	}
+
+// }
+// @include breakpoint ($small) {
+// 	.mobile-nav {
+// 		display: block;
+// 	}
+// }
+
+.nav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	background: $white;
+	width: 100%;
+	height: 50px;
+	text-align: right;
+	z-index: 999999999;
+	header {
+		height: 100%; 
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+	li {
+		display: inline-block;
+		height: 40px;
+		text-align: center;
+		background: $black;
+		width: 100px; 
+		border-radius: 0 0 8px 8px;
+		@include breakpoint ($small) {
+			width: 75px; 
+		}
+		a {
+			color: $white; 
+		} 
+		&:hover {
+			background: $gray; 
+		}
+		&:last-of-type {
+			margin-right: 25px;
+			@include breakpoint ($small) {
+				margin-right: 12.5px;
+			}
+		}
+	}
+	a {
+		text-decoration: none;
+		display: block;
+		height: 100%;
+		padding: 12px 0;  
+	}
+	.back-link {
+		float: left;
+		background: none;
+		width: auto; 
+		a {
+			color: $black;
+			margin-left: 25px; 
+			@include breakpoint ($small) {
+				margin-left: 12.5px;
+				margin-right: 12.5px;
+			}
+		}
+		&:hover {
+			background: none;
+		}
+
+	}
+	@include breakpoint ($small) {
+		text-align: center;
+	}
+}
+
+
+/* Underline From Center */
+.hvr-underline-from-center {
+	display: block;
+	vertical-align: middle;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	position: relative;
+	overflow: hidden;
+	&:before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		left: 50%;
+		right: 50%;
+		bottom: 0;
+		background: $black;
+		height: 3px;
+		-webkit-transition-property: left, right;
+		transition-property: left, right;
+		-webkit-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+		-webkit-transition-timing-function: ease-out;
+		transition-timing-function: ease-out;
+	}
+	&:hover:before,
+	&:focus:before,
+	&:active:before {
+		left: 0;
+		right: 0;
+	}
+}

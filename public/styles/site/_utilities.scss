@@ -1,0 +1,76 @@
+// - - clearfix
+%clearfix:before,
+%clearfix:after {
+  content: " ";
+  display: table;
+}
+
+%clearfix:after {
+  clear: both;
+}
+
+%clearfix {
+  *zoom: 1;
+}
+
+//visually hide elements while still making them accessible to screen readers
+.visually-hidden {
+	position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding:0 !important;
+    border:0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .visually-hidden button { display: none !important; }
+
+// flexbox prefix mixins 
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+// - - breakpoint
+// adds responsive breakpoints.
+@mixin breakpoint($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+// - - attention
+// adds accessibility pseudo selectors to hover states.
+@mixin attention() {
+  &:hover,
+  &:active,
+  &:focus {
+    @content;
+  }
+}
+
+// -- rem font sizes
+// adds em font size calculated from pixels
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// - - functions
+// calculates pixel size to ems 
+@function calculateRem($size) {
+  $remSize: $size / 16px; // will be overriden if browser supports rem
+  @return $remSize * 1rem;
+}

@@ -1,0 +1,32 @@
+extends ../layouts/default
+include ../mixins/default_mixins
+
+block content
+	+contact_nav
+	section.contact-slide
+		.wrapper
+			h1 Hit me up!
+			p I am currently available for part time freelance work. Or just reach out to chat, grab a beer or have some coffee.
+		.contact.wrapper
+			.contact-area
+				if enquirySubmitted
+					h3 Thanks for getting in touch.
+				else
+					.contact-form
+						form(method='post')
+							input(type='hidden', name='action', value='contact')
+							label Name
+							.form-group(class=validationErrors.name ? 'has-error' : null)
+								input(type='text', name='name.full', value=formData['name.full']).form-control
+
+							label Email
+							.form-group(class=validationErrors.email ? 'has-error' : null)
+								input(type='email', name='email', value=formData.email).form-control
+
+							.form-group(class=validationErrors.message ? 'has-error' : null).text-area
+								label Leave me a message...
+								textarea(name='message', rows=4).form-control= formData.message
+							.form-actions
+								button(type='submit') Send
+			.side-links
+				+contact_links

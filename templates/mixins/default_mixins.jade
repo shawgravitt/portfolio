@@ -1,0 +1,73 @@
+//- ================Navigation for all mobile pages =================
+
+mixin mobile_nav
+	.mobile-nav
+		.nav-icon
+			span
+			span
+			span
+			span
+			span.visually-hidden Toggle navigation
+
+		header
+			nav
+				ul
+					each link in navLinks
+						li(class=(section == link.key ? 'active' : null)): a.hvr-underline-from-center(href=link.href)= link.label
+				+contact_links
+
+//- ================Navigation for home/landing page =================
+
+mixin home_nav
+	.home-nav: header
+		nav
+			ul
+				li: a.hvr-underline-from-center(href='/contact') Contact
+				li: a.hvr-underline-from-center(href='/work') Work
+	+contact_links
+
+//- ================Navigation for work page =================
+mixin work_nav 
+	header.nav
+		nav
+			ul
+				li.home-page-link: a(href='/') About
+				li.contact-page-link: a(href='/contact') Contact
+
+//- ================Navigation for project page =================
+mixin project_nav 
+	header.nav
+		nav
+			ul
+				li.back-link: a(href='/work') &larr; back to my work
+				li.home-page-link: a(href='/') About
+				li.contact-page-link: a(href='/contact') Contact
+
+//- ================Navigation for contact page =================
+mixin contact_nav 
+	header.nav
+		nav
+			ul
+				li.home-page-link: a(href='/') About
+				li.contact-page-link: a(href='/work') Work
+
+//- ================Footer Contact Links =================
+
+mixin contact_links
+	ul.contact-links
+		li.email
+			span.icon-mail
+			a(href="/contact")
+			span.visually-hidden Email
+		li.linkedin
+			span.icon-linkedin
+			a(href="https://www.linkedin.com/in/shawgravitt" target='_blank')
+			span.visually-hidden LinkedIn
+		li.github
+			span.icon-github
+			a(href="https://github.com/shawgravitt" target='_blank')
+			span.visually-hidden Github
+		li.resume
+			span.icon-resume
+			a(href="/resume.pdf" target='_blank')
+			span.visually-hidden Resume

@@ -1,0 +1,57 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	text-rendering: optimizeLegibility;
+}
+
+.wrapper {
+	max-width: 1000px;
+	width: 100%;
+	position: relative;
+	margin: auto;
+	padding: 0 25px; 
+}
+
+h1 {
+	font-size: 4vw; 
+	font-family: $heading; 
+	@include breakpoint ($medium) {
+		font-size: 7vw;
+	}
+}
+h2 {
+	font-size: 2.75vw; 
+	font-family: $heading;
+	strong {
+		font-size: 3.25vw;
+		text-transform: uppercase;
+		color: $gray; 
+	}
+	@include breakpoint ($medium) {
+		font-size: 5vw;
+		strong {
+			font-size: 5.5vw;
+		} 
+	}
+}
+h3 {
+	font-size: 2vw; 
+	font-family: $heading;
+	@include breakpoint ($medium) {
+		font-size: 4.5vw;
+	}
+}
+p {
+	font-size: 1.5vw; 
+	font-family: $body;
+	@include breakpoint ($medium) {
+		font-size: 3.5vw;
+	}
+}
+a {
+	font-family: $body;
+}
