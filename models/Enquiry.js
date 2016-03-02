@@ -51,7 +51,7 @@ Enquiry.schema.methods.sendNotificationEmail = function(callback) {
 			to: admins,
 			from: {
 				name: 'Shaw Gravitt',
-				email: 'contact@shawgravitt.com'
+				email: 'shaw@shawgravitt.com'
 			},
 			subject: 'New Enquiry for Shaw Gravitt',
 			enquiry: enquiry
