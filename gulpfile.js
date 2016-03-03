@@ -5,10 +5,10 @@ var watch = require('gulp-watch');
 var sass = require('gulp-sass');
 var shell = require('gulp-shell');
 var bs = require('browser-sync').create();
-var coffee = require('gulp-coffee');
-var gutil = require('gulp-util');
+// var coffee = require('gulp-coffee');
+// var gutil = require('gulp-util');
 
-var coffeeStream = coffee({bare: true});
+// var coffeeStream = coffee({bare: true});
 
 var paths = {
     'src':['./models/**/*.js','./routes/**/*.js', 'keystone.js', 'package.json'],
@@ -33,17 +33,17 @@ gulp.task('watch:lint', function () {
         .pipe(jshint.reporter(jshintReporter));
 });
 
-coffeeStream.on('error', gutil.log);
+// coffeeStream.on('error', gutil.log);
 
-gulp.task('coffee', function() {
-    gulp.src('./public/js/*.coffee')
-        .pipe(coffee({bare: true}).on('error', gutil.log))
-        .pipe(gulp.dest('./public/js/'));
-});
+// gulp.task('coffee', function() {
+//     gulp.src('./public/js/*.coffee')
+//         .pipe(coffee({bare: true}).on('error', gutil.log))
+//         .pipe(gulp.dest('./public/js/'));
+// });
 
-gulp.task('watch:coffee', function () {
-    gulp.watch('./public/js/*.coffee', ['coffee']);
-});
+// gulp.task('watch:coffee', function () {
+//     gulp.watch('./public/js/*.coffee', ['coffee']);
+// });
 
 gulp.task('sass', function(){
     gulp.src(paths.style.all)
@@ -65,5 +65,5 @@ gulp.task('browser-sync', function(){
 
 gulp.task('runKeystone', shell.task('node keystone.js'));
 
-gulp.task('watch', ['watch:sass', 'watch:coffee', 'watch:lint']);
+gulp.task('watch', ['watch:sass', 'watch:lint']);
 gulp.task('default', ['watch', 'runKeystone', 'browser-sync']);
