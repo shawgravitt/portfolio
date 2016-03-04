@@ -48,6 +48,7 @@ h3 {
 p {
 	font-size: 1.5vw; 
 	font-family: $body;
+	line-height: 1.5; 
 	@include breakpoint ($medium) {
 		font-size: 3.5vw;
 	}
