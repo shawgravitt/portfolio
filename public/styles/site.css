@@ -1234,7 +1234,8 @@ h3 {
 
 p {
   font-size: 1.5vw;
-  font-family: 'Josefin Sans', sans-serif; }
+  font-family: 'Josefin Sans', sans-serif;
+  line-height: 1.5; }
   @media (max-width: 768px) {
     p {
       font-size: 3.5vw; } }

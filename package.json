@@ -9,9 +9,12 @@
   "dependencies": {
     "async": "^0.9.0",
     "keystone": "^0.3.16",
+    "node-sass": "^3.4.2",
+    "node-sass-middleware": "^0.5.0",
     "underscore": "^1.8.0"
   },
   "devDependencies": {
+    "dotenv": "^1.1.0",
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
@@ -22,7 +25,12 @@
     "gulp-watch": "^0.6.5",
     "jshint-stylish": "^0.1.3"
   },
+  "engines": {
+    "node": ">=0.10.33",
+    "npm": ">=2.13.3"
+  },
   "scripts": {
     "start": "node keystone.js"
-  }
+  },
+  "main": "keystone.js"
 }

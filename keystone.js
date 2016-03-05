@@ -1,6 +1,6 @@
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
-// require('dotenv').load();
+require('dotenv').load(); // only needed for local development 
 
 // Require keystone
 var keystone = require('keystone');
@@ -14,7 +14,7 @@ keystone.init({
 	'name': 'Shaw Gravitt',
 	'brand': 'Shaw Gravitt',
 	
-	// 'sass': 'public',
+	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'resume': 'public/resume.pdf',
