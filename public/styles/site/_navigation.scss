@@ -157,6 +157,9 @@
 		&:hover {
 			background: $gray; 
 		}
+		&:first-of-type {
+			margin-right: 5px;
+		}
 		&:last-of-type {
 			margin-right: 25px;
 			@include breakpoint ($small) {

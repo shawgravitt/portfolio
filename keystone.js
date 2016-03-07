@@ -23,10 +23,11 @@ keystone.init({
 	'emails': 'templates/emails',
 	
 	'auto update': true,
-	'session': false,
+	'session': true,
 	'auth': true,
 	'user model': 'User',
-	'cookie secret': '-/~09m9^T3T-_/Xwi>d~?nm:W>EXwMW4(HHsEc`>JG.R!yn3z1g%6}Hk@lE}Q"y:'
+	'cookie secret': process.env.COOKIE_SECRET || 'shawgravitt',
+	'mongo': process.env.MONGO_URI || process.env.MONGOLAB_URI || 'mongodb://localhost/shawgravitt'
 
 });
 
