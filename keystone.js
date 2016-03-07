@@ -1,5 +1,3 @@
-// Simulate config options from your production environment by
-// customising the .env file in your project's root folder.
 // require('dotenv').load(); // only needed for local development 
 
 // Require keystone
@@ -26,8 +24,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-	'cookie secret': process.env.COOKIE_SECRET || 'shawgravitt',
-	'mongo': process.env.MONGO_URI || process.env.MONGOLAB_URI || 'mongodb://localhost/shawgravitt'
+	'cookie secret': '-/~09m9^T3T-_/Xwi>d~?nm:W>EXwMW4(HHsEc`>JG.R!yn3z1g%6}Hk@lE}Q"y:'
 
 });
 
