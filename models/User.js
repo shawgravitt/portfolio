@@ -21,14 +21,6 @@ User.schema.virtual('canAccessKeystone').get(function() {
 	return this.isAdmin;
 });
 
-
-/**
- * Relationships
- */
-
-User.relationship({ ref: 'Project', path: 'projects', refPath: 'author' });
-
-
 /**
  * Registration
  */
