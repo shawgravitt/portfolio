@@ -1,4 +1,4 @@
-// require('dotenv').load(); // only needed for local development 
+require('dotenv').load(); // only needed for local development 
 
 // Require keystone
 var keystone = require('keystone');

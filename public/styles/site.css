@@ -1433,7 +1433,8 @@ a {
     .home-page aside .contact-links {
       position: absolute;
       bottom: 0;
-      border-top: none; }
+      border-top: none;
+      width: 100%; }
       .home-page aside .contact-links li {
         display: inline-block;
         color: #000000;
