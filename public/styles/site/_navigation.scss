@@ -148,6 +148,7 @@
 		background: $black;
 		width: 100px; 
 		border-radius: 0 0 8px 8px;
+		margin-right: 5px;
 		@include breakpoint ($small) {
 			width: 75px; 
 		}
@@ -156,9 +157,6 @@
 		} 
 		&:hover {
 			background: $gray; 
-		}
-		&:first-of-type {
-			margin-right: 5px;
 		}
 		&:last-of-type {
 			margin-right: 25px;

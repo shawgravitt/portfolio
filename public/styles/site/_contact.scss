@@ -5,6 +5,7 @@
 	}
 }
 .contact {
+	padding-bottom: 50px;
 	@include flexbox();
 	justify-content: space-between;
 	-webkit-flex-wrap: wrap; 
@@ -54,6 +55,9 @@
 		position: relative;
 		label, input {
 			display: block;
+		}
+		input, textarea {
+			border: 1px solid $black;
 		}
 	}
 
