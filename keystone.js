@@ -43,6 +43,9 @@ keystone.set('locals', {
 	editable: keystone.content.editable
 });
 
+// Https images from cloudinary
+keystone.set('cloudinary secure', true);
+
 // Load your project's Routes
 
 keystone.set('routes', require('./routes'));
