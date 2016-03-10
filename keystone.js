@@ -12,7 +12,6 @@ keystone.init({
 	'name': 'Shaw Gravitt',
 	'brand': 'Shaw Gravitt',
 	
-	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'resume': 'public/resume.pdf',
