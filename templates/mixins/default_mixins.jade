@@ -1,20 +1,11 @@
 //- ================Navigation for all mobile pages =================
 
 mixin mobile_nav
-	.mobile-nav
-		.nav-icon
-			span
-			span
-			span
-			span
-			span.visually-hidden Toggle navigation
-
-		header
-			nav
-				ul
-					each link in navLinks
-						li(class=(section == link.key ? 'active' : null)): a.hvr-underline-from-center(href=link.href)= link.label
-				+contact_links
+	.home-nav.mobile: header
+		nav
+			ul
+				li: a.hvr-underline-from-center(href='/contact') Contact
+				li: a.hvr-underline-from-center(href='/work') Work
 
 //- ================Navigation for home/landing page =================
 

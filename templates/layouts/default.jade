@@ -17,13 +17,6 @@ html
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
 		link(href="/styles/site.css", rel="stylesheet")
 
-		//- This file provides the default styling for the KeystoneJS Content Editor
-		//- if user && user.canAccessKeystone
-		//- 	link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
-
-		//- Include template-specific stylesheets by extending the css block
-		block css
-
 		//- Add any other template-specific HEAD tags by extending the head block
 		block head
 
@@ -31,10 +24,6 @@ html
 	body
 		//- BODY
 		.content
-
-			//- NOTE:
-			//- There is no .container wrapping class around body blocks to allow more flexibility in design.
-			//- Remember to include it in your templates when you override the intro and content blocks!
 
 			//- The Intro block appears above flash messages (used for temporary information display)
 			block intro
@@ -54,22 +43,7 @@ html
 			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
 
 		//- JAVASCRIPT
-
-		//- jQuery 1.11.1 is included by default, and required by both Bootstrap
-		//- and the KeystoneJS Content Editor. If you are not targeting IE8,
-		//- you can upgrade to 2.1.3 (also bundled) for better performance.
 		script(src='/js/jquery/jquery-2.1.3.min.js')
-
-		//- Customise which Bootstrap javascript files are served by including
-		//- them specifically here, instead of bootstrap-3.3.4.min.js
-		//- script(src='/js/bootstrap/bootstrap-3.3.4.min.js')
-
-		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
-		//- which generate links to edit content for users who can access Keystone
-		//- if user && user.canAccessKeystone
-		//- 	script(src='/keystone/js/content/editor.js')
 
 		//- Add scripts that are globally required by your site here.
 		script(src='/js/_main.js')
-		//- Include template-specific javascript files by extending the js block
-		block js

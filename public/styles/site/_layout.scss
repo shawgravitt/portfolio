@@ -26,17 +26,6 @@ h1 {
 h2 {
 	font-size: 2.75vw; 
 	font-family: $heading;
-	strong {
-		font-size: 3.25vw;
-		text-transform: uppercase;
-		color: $gray; 
-	}
-	@include breakpoint ($medium) {
-		font-size: 5vw;
-		strong {
-			font-size: 5.5vw;
-		} 
-	}
 }
 h3 {
 	font-size: 2vw; 
@@ -50,10 +39,7 @@ p {
 	font-family: $body;
 	line-height: 1.5; 
 	@include breakpoint ($medium) {
-		font-size: 3.5vw;
-	}
-	@include breakpoint ($small) {
-		font-size: 4.5vw;
+		font-size: 15px;
 	}
 }
 a {

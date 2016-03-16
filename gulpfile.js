@@ -1,14 +1,15 @@
-var gulp = require('gulp');
-var jshint = require('gulp-jshint');
+var gulp =           require('gulp');
+var jshint =         require('gulp-jshint');
 var jshintReporter = require('jshint-stylish');
-var watch = require('gulp-watch');
-var sass = require('gulp-sass');
-var shell = require('gulp-shell');
-var bs = require('browser-sync').create();
-// var coffee = require('gulp-coffee');
-// var gutil = require('gulp-util');
+var watch =          require('gulp-watch');
+var sass =           require('gulp-sass');
+var shell =          require('gulp-shell');
+var bs =             require('browser-sync').create();
+var cssnano =        require('gulp-cssnano');
+// var coffee =         require('gulp-coffee');
+// var gutil =          require('gulp-util');
 
-// var coffeeStream = coffee({bare: true});
+// var coffeeStream =   coffee({bare: true});
 
 var paths = {
     'src':['./models/**/*.js','./routes/**/*.js', 'keystone.js', 'package.json'],
@@ -48,6 +49,7 @@ gulp.task('watch:lint', function () {
 gulp.task('sass', function(){
     gulp.src(paths.style.all)
         .pipe(sass().on('error', sass.logError))
+        .pipe(cssnano())
         .pipe(gulp.dest(paths.style.output))
     .pipe(bs.stream());
 });
@@ -55,6 +57,16 @@ gulp.task('sass', function(){
 gulp.task('watch:sass', function () {
     gulp.watch(paths.style.all, ['sass']);
 });
+
+// gulp.task('cssnano', function() {
+//     return gulp.src('./main.css')
+//         .pipe(cssnano())
+//         .pipe(gulp.dest(paths.style.output))
+// });
+
+// gulp.task('watch:cssnano', function () {
+//     gulp.watch('paths.style.all,' ['sass']);
+// });
 
 gulp.task('browser-sync', function(){
   bs.init({
