@@ -1574,7 +1574,7 @@ a {
   @media (max-width: 450px) {
     .project {
       height: auto;
-      margin-bottom: 10px; } }
+      margin-bottom: 25px; } }
 
 .project .peephole {
   opacity: 0;
