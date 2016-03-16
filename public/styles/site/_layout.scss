@@ -52,6 +52,9 @@ p {
 	@include breakpoint ($medium) {
 		font-size: 3.5vw;
 	}
+	@include breakpoint ($small) {
+		font-size: 4.5vw;
+	}
 }
 a {
 	font-family: $body;

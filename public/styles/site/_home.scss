@@ -2,7 +2,7 @@
 	min-height: 100vh; 
 	@include flexbox();
 	justify-content: flex-start;
-	@include breakpoint ($small) {
+	@include breakpoint ($small) { 
 		-webkit-flex-direction: column; 
 		-ms-flex-direction: column; 
 		flex-direction: column; 
@@ -20,8 +20,7 @@
 			margin-top: 25px;
 		}
 		@include breakpoint ($small) {
-			width: 100%; 
-			margin-top: 0;
+			width: 100%;
 		}
 		
 	}

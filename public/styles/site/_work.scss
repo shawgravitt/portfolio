@@ -90,6 +90,7 @@
 		width: 50%;
 		position: relative;
 		vertical-align: middle;
+		
 		@include breakpoint ($small) {
 			width: 100%;
 			display: block; 
@@ -97,6 +98,9 @@
 			z-index: 1; 
 			position: absolute;
 			top: 12.5%; 
+			p {
+				line-height: 1; 
+			}
 		}
 	}
 	&:hover {

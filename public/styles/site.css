@@ -1276,6 +1276,9 @@ p {
   @media (max-width: 768px) {
     p {
       font-size: 3.5vw; } }
+  @media (max-width: 450px) {
+    p {
+      font-size: 4.5vw; } }
 
 a {
   font-family: "Josefin Sans", sans-serif; }
@@ -1337,7 +1340,7 @@ a {
       margin-right: 25px; }
       @media (max-width: 450px) {
         .nav li:last-of-type {
-          margin-right: 12.5px; } }
+          margin-right: 0; } }
   .nav a {
     text-decoration: none;
     display: block;
@@ -1417,8 +1420,7 @@ a {
         margin-top: 25px; } }
     @media (max-width: 450px) {
       .home-page .intro {
-        width: 100%;
-        margin-top: 0; } }
+        width: 100%; } }
   .home-page aside {
     position: relative;
     text-align: center;
@@ -1559,7 +1561,9 @@ a {
         color: #ffffff;
         z-index: 1;
         position: absolute;
-        top: 12.5%; } }
+        top: 12.5%; }
+        .project figcaption p {
+          line-height: 1; } }
   .project:hover .peephole img {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
@@ -1710,7 +1714,8 @@ a {
   @media (max-width: 450px) {
     .project-description {
       width: 100%;
-      display: block; } }
+      display: block;
+      padding-left: 0; } }
 
 @-webkit-keyframes Scroll {
   0% {
