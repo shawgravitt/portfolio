@@ -3,8 +3,8 @@ consoleMessage = "Well hello there! Thanks for taking a look under the hood! If 
 isScrolledIntoView = (elem) ->
 	docViewTop = window.scrollY
 	docViewBottom = docViewTop + window.offsetHeight
-	elemTop = elem.offsetTop + 400
-	elemBottom = elemTop + elem.offsetHeight - 600
+	elemTop = getBoundingClientRect().top + 400
+	elemBottom = elem.getBoundingClientRect().bottom - 600
 
 	console.log(docViewTop)
 
@@ -12,6 +12,8 @@ isScrolledIntoView = (elem) ->
 		elem.className += " bring-in"
 	else
 		elem.className = elem.className.replace( /(?:^|\s)bring-in(?!\S)/g , "")
+		# possible option:
+		# elem.classList.remove(bring-in) 
 	return
 
 window.onscroll = ->

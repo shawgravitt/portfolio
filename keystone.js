@@ -36,8 +36,7 @@ keystone.import('models');
 keystone.set('locals', {
 	_: require('underscore'),
 	env: keystone.get('env'),
-	utils: keystone.utils,
-	editable: keystone.content.editable
+	utils: keystone.utils
 });
 
 // Https images from cloudinary
