@@ -1,24 +1,23 @@
-var consoleMessage, isScrolledIntoView;
+var consoleMessage, isScrolledIntoView, projects;
 
-consoleMessage = "Well hello there! Thanks for taking a look under the hood! If you haven't noticed yet this site is running on node and express. You might be thinking 'Thats a little over kill for a portfolio site, this guy is not very smart with choosing tools.' And yes it probably is overkill for a portfolio site but it was a fun challenge to learn a little express and node and to test out the keystone.js CMS. So I hope you enjoy my site and if you have any feedback please let me know by clicking the contact tab.";
+consoleMessage = "Well hello there! Thanks for taking a look under the hood! If you haven't noticed yet, this site is running on node with mongodb and express. You might be thinking 'Thats a little over kill for a portfolio site' And yes it probably is overkill for a portfolio site but it was a fun challenge to learn a little mongodb, express and node and to test out the keystone.js cms. So I hope you enjoy my site and if you have any feedback, want to hire me or just want to talk please let me know http://www.shawgravitt.com/contact";
+
+projects = document.getElementsByClassName("project");
 
 isScrolledIntoView = function(elem) {
-  var docViewBottom, docViewTop, elemBottom, elemTop;
-  docViewTop = window.scrollY;
-  docViewBottom = docViewTop + window.offsetHeight;
-  elemTop = elem.offsetTop + 400;
-  elemBottom = elemTop + elem.offsetHeight - 600;
-  console.log(docViewTop);
-  if (elemBottom <= docViewBottom && elemTop >= docViewTop) {
+  var elemBottom, elemTop, isVisible;
+  elemTop = elem.getBoundingClientRect().top + 400;
+  elemBottom = elem.getBoundingClientRect().bottom - 300;
+  isVisible = elemTop >= 0 && elemBottom <= window.innerHeight;
+  if (isVisible && !elem.classList.contains('bring-in')) {
     elem.className += " bring-in";
-  } else {
-    elem.className = elem.className.replace(/(?:^|\s)bring-in(?!\S)/g, "");
+  } else if (!isVisible && elem.classList.contains('bring-in')) {
+    elem.classList.remove('bring-in');
   }
 };
 
 window.onscroll = function() {
-  var i, len, project, projects;
-  projects = document.getElementsByClassName("project");
+  var i, len, project;
   for (i = 0, len = projects.length; i < len; i++) {
     project = projects[i];
     isScrolledIntoView(project);
@@ -26,9 +25,13 @@ window.onscroll = function() {
 };
 
 document.onreadystatechange = function() {
-  var state;
+  var i, len, project, state;
   state = document.readyState;
   if (state === 'complete') {
-    return console.log(consoleMessage);
+    console.log(consoleMessage);
+    for (i = 0, len = projects.length; i < len; i++) {
+      project = projects[i];
+      isScrolledIntoView(project);
+    }
   }
 };
