@@ -1,6 +1,6 @@
 var consoleMessage, isScrolledIntoView, projects;
 
-consoleMessage = "Well hello there! Thanks for taking a look under the hood! If you haven't noticed yet, this site is running on node with mongodb and express. You might be thinking 'Thats a little over kill for a portfolio site' And yes it probably is overkill for a portfolio site but it was a fun challenge to learn a little mongodb, express and node and to test out the keystone.js cms. So I hope you enjoy my site and if you have any feedback, want to hire me or just want to talk please let me know http://www.shawgravitt.com/contact";
+consoleMessage = "Well hello there! Thanks for taking a look under the hood! If you haven't noticed yet, this site is running on a node.js cms and app framework called KeystoneJS. You might be thinking 'Thats a little over kill for a portfolio site.' And yes it probably is overkill for a portfolio site but it was a fun challenge to learn a little mongodb, express and node. So I hope you enjoy my site and if you have any feedback, want to hire me or just want to talk please let me know http://www.shawgravitt.com/contact";
 
 projects = document.getElementsByClassName("project");
 

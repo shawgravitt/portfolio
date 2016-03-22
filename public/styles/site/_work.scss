@@ -79,7 +79,6 @@
 		transform: translate(-50%, -50%);
 		&:hover {
 			color: $black;
-			// transition: all 0.25s ease;
 		}
 		@include breakpoint ($small) {
 			top: 75%; 
