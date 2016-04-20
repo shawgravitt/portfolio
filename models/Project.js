@@ -18,7 +18,7 @@ Project.add({
 	url: { type: String },
 	heroImage: { type: Types.CloudinaryImage, select: true },
 	logo: {type: Types.CloudinaryImage, select: true },
-	content: { type: Types.Html, wysiwyg: false, height: 150 },
+	content: { type: Types.Html, wysiwyg: true, height: 150 },
 	categories: { type: Types.Relationship, ref: 'ProjectCategory', many: true }
 });
 
